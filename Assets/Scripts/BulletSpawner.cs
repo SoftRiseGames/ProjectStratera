@@ -6,9 +6,10 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator _animControl;
     void Start()
     {
-        
+        _animControl = GameObject.Find("Gun").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -17,6 +18,12 @@ public class BulletSpawner : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(bullet, rb.transform.position, rb.transform.rotation);
+            _animControl.enabled = false;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _animControl.enabled = true;
         }
     }
 }
