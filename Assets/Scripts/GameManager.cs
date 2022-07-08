@@ -16,13 +16,10 @@ public class GameManager : MonoBehaviour
     {
         arraycontrol = health.Length;
         DeathControl = health.Length;
-        
     }
-
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetMouseButtonDown(0) && arraycontrol > 0)
         {
             health[arraycontrol-1].gameObject.SetActive(false);
@@ -31,23 +28,27 @@ public class GameManager : MonoBehaviour
         else if(Input.GetMouseButtonDown(0) && arraycontrol == 0)
         {
             health[0].gameObject.SetActive(false);
-            
         }
+        
         if (Input.GetMouseButtonDown(0))
         {
             DeathControl = DeathControl - 1;
         }
         StartCoroutine(timer());
-        
+
     }
     public IEnumerator timer()
     {
-        if(DeathControl == 0)
+        if (DeathControl == 0)
         {
-            if (_EnemyCount > 0)
+            yield return new WaitForSeconds(1f);
+            if(_EnemyCount > 0)
             {
-                yield return new WaitForSeconds(1f);
                 Time.timeScale = 0;
+            }
+            else
+            {
+                Debug.Log("geçtin");
             }
         }
     }
