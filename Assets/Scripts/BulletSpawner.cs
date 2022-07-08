@@ -17,7 +17,7 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && gameManager.DeathControl>0)
+        if (Input.GetMouseButtonDown(0) && gameManager.DeathControl>0 && gameManager._isGun ==true)
         {
             Instantiate(bullet, rb.transform.position, rb.transform.rotation);
             _animControl.enabled = false;
