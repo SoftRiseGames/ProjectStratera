@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] health;
@@ -55,6 +55,11 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0;
             }
+        }
+        if(_EnemyCount == 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
