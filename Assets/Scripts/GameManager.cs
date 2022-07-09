@@ -11,12 +11,15 @@ public class GameManager : MonoBehaviour
     public int DeathControl;
     public int _EnemyCount;
     public bool _isGun;
-    
+    public GameObject TimeLine;
     void Start()
     {
         arraycontrol = health.Length;
         DeathControl = health.Length;
         _isGun = true;
+        GameObject.Find("TimeLine");
+        TimeLine.gameObject.SetActive(false);
+        
     }
     // Update is called once per frame
     void Update()
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Geçtin");
             _isGun = false;
+            TimeLine.gameObject.SetActive(true);
         }
     }
     public IEnumerator timer()

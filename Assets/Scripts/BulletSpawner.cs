@@ -11,7 +11,7 @@ public class BulletSpawner : MonoBehaviour
     void Start()
     {
         _animControl = GameObject.Find("Gun").GetComponent<Animator>();
-       
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
