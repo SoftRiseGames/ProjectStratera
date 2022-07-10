@@ -12,10 +12,10 @@ public class forward : MonoBehaviour
 
     private void Awake()
     {
-        rb.velocity = transform.up * -1 * 50* Time.deltaTime;
-    }
+        
     void Update()
     {
-        
+            rb.velocity = Vector2.down * 50 * Time.deltaTime;
+        }
     }
 }

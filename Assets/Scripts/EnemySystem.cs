@@ -26,5 +26,9 @@ public class EnemySystem : MonoBehaviour
             Instantiate(_particles, transform.gameObject.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
         }
+        if(collision.gameObject.tag == "Collide")
+        {
+            Time.timeScale = 0;
+        }
     }
 }

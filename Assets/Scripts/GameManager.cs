@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int _EnemyCount;
     public bool _isGun;
     public GameObject TimeLine;
+    public Collision2D collide;
     void Start()
     {
         arraycontrol = health.Length;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
         _isGun = true;
         GameObject.Find("TimeLine");
         TimeLine.gameObject.SetActive(false);
+       
         
     }
     // Update is called once per frame
@@ -62,4 +64,5 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+   
 }
