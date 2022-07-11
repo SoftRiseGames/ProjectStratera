@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
@@ -13,14 +14,17 @@ public class GameManager : MonoBehaviour
     public bool _isGun;
     public GameObject TimeLine;
     public Collision2D collide;
+    public Canvas restart;
     void Start()
     {
         arraycontrol = health.Length;
         DeathControl = health.Length;
         _isGun = true;
         GameObject.Find("TimeLine");
+        restart = GameObject.Find("Restart").GetComponent<Canvas>();
         TimeLine.gameObject.SetActive(false);
-       
+        restart.gameObject.SetActive(false);
+        Time.timeScale = 1;
         
     }
     // Update is called once per frame
@@ -56,6 +60,7 @@ public class GameManager : MonoBehaviour
             if (_EnemyCount > 0)
             {
                 Time.timeScale = 0;
+                restart.gameObject.SetActive(true);
             }
         }
         if(_EnemyCount == 0)
