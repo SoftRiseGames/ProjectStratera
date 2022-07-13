@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public GameObject TimeLine;
     public Collision2D collide;
     public Canvas restart;
+    public GameObject windowoff;
+    
+    public bool isCollide;
     void Start()
     {
         arraycontrol = health.Length;
@@ -22,8 +25,10 @@ public class GameManager : MonoBehaviour
         _isGun = true;
         GameObject.Find("TimeLine");
         restart = GameObject.Find("Restart").GetComponent<Canvas>();
+        
         TimeLine.gameObject.SetActive(false);
         restart.gameObject.SetActive(false);
+        windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
         
     }
@@ -59,6 +64,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             if (_EnemyCount > 0)
             {
+                windowoff.gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.2f);
                 Time.timeScale = 0;
                 restart.gameObject.SetActive(true);
             }
@@ -68,6 +75,19 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+        if (isCollide == true)
+        {
+            windowoff.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.2f);
+            Time.timeScale = 0;
+            restart.gameObject.SetActive(true);
+        }
+
+        
     }
-   
+
+    
+    
+
 }

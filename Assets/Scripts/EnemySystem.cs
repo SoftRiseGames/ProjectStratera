@@ -6,9 +6,12 @@ public class EnemySystem : MonoBehaviour
 {
     public GameManager gameManager;
     public GameObject _particles;
+    public AudioClip shootvoice;
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
@@ -22,13 +25,14 @@ public class EnemySystem : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             gameManager._EnemyCount = gameManager._EnemyCount - 1;
+            AudioSource.PlayClipAtPoint(shootvoice,Camera.main.transform.position);
             Destroy(this.gameObject);
             Instantiate(_particles, transform.gameObject.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
         }
         if(collision.gameObject.tag == "Collide")
         {
-            Time.timeScale = 0;
+            gameManager.isCollide = true;
         }
     }
 }
