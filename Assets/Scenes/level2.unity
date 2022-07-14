@@ -446,6 +446,7 @@ MonoBehaviour:
   TimeLine: {fileID: 1282786050}
   restart: {fileID: 330323129}
   windowoff: {fileID: 1192206928}
+  background: {fileID: 835001818}
   isCollide: 0
 --- !u!4 &433311731
 Transform:
@@ -697,6 +698,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 510ec975e76afc64f97daa5ad72c647a, type: 3}
+--- !u!1 &835001818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1235448527196935794, guid: 510ec975e76afc64f97daa5ad72c647a,
+    type: 3}
+  m_PrefabInstance: {fileID: 835001817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &855815248 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3427310008161577340, guid: 3adb184093596414fb4f3aac4d7b4d6a,

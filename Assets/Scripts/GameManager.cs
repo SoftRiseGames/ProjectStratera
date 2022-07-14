@@ -16,8 +16,9 @@ public class GameManager : MonoBehaviour
     public Collision2D collide;
     public Canvas restart;
     public GameObject windowoff;
-    
+    public GameObject background;
     public bool isCollide;
+    public int beginning;
     void Start()
     {
         arraycontrol = health.Length;
@@ -31,8 +32,9 @@ public class GameManager : MonoBehaviour
         windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
         
+        
     }
-    // Update is called once per frame
+   
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun ==true)
@@ -50,12 +52,8 @@ public class GameManager : MonoBehaviour
             DeathControl = DeathControl - 1;
         }
         StartCoroutine(timer());
-        if(_EnemyCount == 0)
-        {
-            Debug.Log("Geçtin");
-            _isGun = false;
-            TimeLine.gameObject.SetActive(true);
-        }
+        
+       
     }
     public IEnumerator timer()
     {
@@ -72,8 +70,13 @@ public class GameManager : MonoBehaviour
         }
         if(_EnemyCount == 0)
         {
+            Debug.Log("Geçtin");
+            _isGun = false;
+            TimeLine.gameObject.SetActive(true);
             yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("go", SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(PlayerPrefs.GetInt("go"));
+           
         }
 
         if (isCollide == true)
@@ -83,11 +86,9 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             restart.gameObject.SetActive(true);
         }
+        
 
         
     }
-
     
-    
-
 }

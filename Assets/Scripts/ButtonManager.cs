@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     public MainMenuScript mainmenumanager;
+    public SaveGame saveManager;
    public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
