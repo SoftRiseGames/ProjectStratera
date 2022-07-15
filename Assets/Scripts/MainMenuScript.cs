@@ -30,20 +30,17 @@ public class MainMenuScript : MonoBehaviour
         {
             
             
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(1);
             savebool.value = 1;
             PlayerPrefs.SetInt("isstartgame", savebool.value);
             Debug.Log(PlayerPrefs.GetInt("isstartgame"));
-            yield return new WaitForSeconds(5);
-           
-
         }
       
         if(PlayerPrefs.GetInt("isstartgame") == 1)
         {
            
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(PlayerPrefs.GetInt("go"));
         }
        
