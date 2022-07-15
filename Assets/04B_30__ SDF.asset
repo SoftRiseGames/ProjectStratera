@@ -658,8 +658,8 @@ MonoBehaviour:
     atlasWidth: 512
     atlasHeight: 512
     characterSetSelectionMode: 7
-    characterSequence: A,B,C,D,E,F,G,H,I,J,K,L,M,O,P,R,S,T,U,V,X,Y,Z
-    referencedFontAssetGUID: 
+    characterSequence: ABCDEFGHIJKMOPRST,U,X,V,Y,Z
+    referencedFontAssetGUID: 3d84a45778ae627448941694c819254d
     referencedTextAssetGUID: 
     fontStyle: 0
     fontStyleModifier: 0
