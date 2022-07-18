@@ -7,10 +7,11 @@ public class MainMenuScript : MonoBehaviour
     public GameObject TimeLineWelcome;
     public SaveGame savebool;
     int value;
+    public GameObject music;
     private void Start()
     {
         TimeLineWelcome.gameObject.SetActive(false);
-        Debug.Log(PlayerPrefs.GetInt("isstartgame"));
+        Debug.Log(PlayerPrefs.GetInt("levelvolume"));
 
     }
     private void Update()
@@ -20,6 +21,15 @@ public class MainMenuScript : MonoBehaviour
             savebool.value = 0;
             PlayerPrefs.SetInt("isstartgame", savebool.value);
             Debug.Log(PlayerPrefs.GetInt("isstartgame"));
+        }
+
+        if(PlayerPrefs.GetInt("levelvolume") == 1)
+        {
+            music.gameObject.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("levelvolume") == 0)
+        {
+            music.gameObject.SetActive(false);
         }
     }
     public IEnumerator welcome()

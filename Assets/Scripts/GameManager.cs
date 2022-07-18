@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public GameObject background;
     public bool isCollide;
     public int beginning;
+    public int musicControl;
+    public GameObject music;
+
     void Start()
     {
         arraycontrol = health.Length;
@@ -31,10 +34,9 @@ public class GameManager : MonoBehaviour
         restart.gameObject.SetActive(false);
         windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
-        
-        
     }
-   
+    
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun ==true)
@@ -52,8 +54,17 @@ public class GameManager : MonoBehaviour
             DeathControl = DeathControl - 1;
         }
         StartCoroutine(timer());
-        
+
+        if (PlayerPrefs.GetInt("levelvolume") == 1)
+        {
+            music.gameObject.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("levelvolume") == 0)
+        {
+            music.gameObject.SetActive(false);
+        }
        
+      
     }
     public IEnumerator timer()
     {
