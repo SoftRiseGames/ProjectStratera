@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public bool isCollide;
     public int beginning;
     public int musicControl;
-    public GameObject music;
+
 
     void Start()
     {
@@ -55,14 +55,7 @@ public class GameManager : MonoBehaviour
         }
         StartCoroutine(timer());
 
-        if (PlayerPrefs.GetInt("levelvolume") == 1)
-        {
-            music.gameObject.SetActive(true);
-        }
-        else if (PlayerPrefs.GetInt("levelvolume") == 0)
-        {
-            music.gameObject.SetActive(false);
-        }
+       
        
       
     }

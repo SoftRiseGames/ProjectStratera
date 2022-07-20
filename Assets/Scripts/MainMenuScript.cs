@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour
     public SaveGame savebool;
     int value;
     public GameObject music;
+    public GameObject gameplayMusic;
     private void Start()
     {
         TimeLineWelcome.gameObject.SetActive(false);
@@ -38,20 +39,39 @@ public class MainMenuScript : MonoBehaviour
        
         if(PlayerPrefs.GetInt("isstartgame") == 0)
         {
-            
-            
+           
+
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(1);
             savebool.value = 1;
             PlayerPrefs.SetInt("isstartgame", savebool.value);
             Debug.Log(PlayerPrefs.GetInt("isstartgame"));
+            if (PlayerPrefs.GetInt("levelvolume") == 1)
+            {
+                gameplayMusic.gameObject.SetActive(true);
+                DontDestroyOnLoad(gameplayMusic);
+            }
+            else if (PlayerPrefs.GetInt("levelvolume") == 0)
+            {
+                gameplayMusic.gameObject.SetActive(false);
+            }
+
         }
       
         if(PlayerPrefs.GetInt("isstartgame") == 1)
         {
-           
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(PlayerPrefs.GetInt("go"));
+
+            if (PlayerPrefs.GetInt("levelvolume") == 1)
+            {
+                gameplayMusic.gameObject.SetActive(true);
+                DontDestroyOnLoad(gameplayMusic);
+            }
+            else if (PlayerPrefs.GetInt("levelvolume") == 0)
+            {
+                gameplayMusic.gameObject.SetActive(false);
+            }
         }
        
 

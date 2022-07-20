@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class ButtonManager : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class ButtonManager : MonoBehaviour
     public SaveGame saveManager;
     public GameObject levelsAll;
     public LevelManager levelmanager;
+    public GameObject music;
     private int levelvalue = 1;
-
+    public GameObject gameplayMusic;
     private void Start()
     {
         levelvalue = PlayerPrefs.GetInt("levelvolume");
@@ -37,7 +39,16 @@ public class ButtonManager : MonoBehaviour
     }
     public void levelchoose()
     {
-        
+        SceneManager.LoadScene(int.Parse(gameObject.name));
+        if (PlayerPrefs.GetInt("levelvolume") == 1)
+        {
+            gameplayMusic.gameObject.SetActive(true);
+            DontDestroyOnLoad(gameplayMusic);
+        }
+        else if (PlayerPrefs.GetInt("levelvolume") == 0)
+        {
+            gameplayMusic.gameObject.SetActive(false);
+        }
     }
     public void volume()
     { 
