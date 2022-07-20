@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class voicesettings : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -17,9 +17,11 @@ public class voicesettings : MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }
-        else if(PlayerPrefs.GetInt("levelvolume") == 0)
+        else if(PlayerPrefs.GetInt("levelvolume") ==0)
         {
             this.gameObject.SetActive(false);
+            
         }
+        
     }
 }

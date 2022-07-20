@@ -6,7 +6,6 @@ public class MainMenuScript : MonoBehaviour
 {
     public GameObject TimeLineWelcome;
     public SaveGame savebool;
-    int value;
     public GameObject music;
     public GameObject gameplayMusic;
     private void Start()
@@ -39,8 +38,6 @@ public class MainMenuScript : MonoBehaviour
        
         if(PlayerPrefs.GetInt("isstartgame") == 0)
         {
-           
-
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(1);
             savebool.value = 1;

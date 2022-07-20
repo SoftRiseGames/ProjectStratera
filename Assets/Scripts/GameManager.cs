@@ -18,9 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject windowoff;
     public GameObject background;
     public bool isCollide;
-    public int beginning;
     public int musicControl;
-
+    public int soundcheckvalue = 1;
 
     void Start()
     {
@@ -34,6 +33,8 @@ public class GameManager : MonoBehaviour
         restart.gameObject.SetActive(false);
         windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
+        soundcheckvalue = 1;
+        PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
     }
     
 
@@ -54,10 +55,7 @@ public class GameManager : MonoBehaviour
             DeathControl = DeathControl - 1;
         }
         StartCoroutine(timer());
-
        
-       
-      
     }
     public IEnumerator timer()
     {
@@ -70,6 +68,8 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(0.2f);
                 Time.timeScale = 0;
                 restart.gameObject.SetActive(true);
+                soundcheckvalue = 0;
+                PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
             }
         }
         if(_EnemyCount == 0)
@@ -85,10 +85,13 @@ public class GameManager : MonoBehaviour
 
         if (isCollide == true)
         {
+            
             windowoff.gameObject.SetActive(true);
             yield return new WaitForSeconds(0.2f);
             Time.timeScale = 0;
             restart.gameObject.SetActive(true);
+            soundcheckvalue = 0;
+            PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
         }
         
 

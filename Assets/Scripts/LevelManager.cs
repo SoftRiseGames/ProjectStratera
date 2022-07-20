@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
-    public Scene[] scenes;
     public Button[] buttons;
     void Start()
     {

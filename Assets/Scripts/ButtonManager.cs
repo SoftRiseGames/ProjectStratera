@@ -9,21 +9,31 @@ public class ButtonManager : MonoBehaviour
     public MainMenuScript mainmenumanager;
     public SaveGame saveManager;
     public GameObject levelsAll;
-    public LevelManager levelmanager;
-    public GameObject music;
     private int levelvalue = 1;
     public GameObject gameplayMusic;
+    public GameManager gameManager;
+  
     private void Start()
     {
         levelvalue = PlayerPrefs.GetInt("levelvolume");
+       
     }
+    
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void Retry()
     {
+        gameManager.soundcheckvalue = 1;
+        PlayerPrefs.SetInt("soundcheckvalue", gameManager.soundcheckvalue);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+       
+    }
+    private void Update()
+    {
+        
     }
     public void welcome()
     {

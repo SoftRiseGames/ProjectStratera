@@ -450,7 +450,8 @@ MonoBehaviour:
   isCollide: 0
   beginning: 0
   musicControl: 0
-  music: {fileID: 0}
+  musicgameplay: []
+  soundcheckvalue: 1
 --- !u!4 &433311731
 Transform:
   m_ObjectHideFlags: 0
@@ -1400,6 +1401,9 @@ MonoBehaviour:
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
   levelmanager: {fileID: 0}
+  music: {fileID: 0}
+  gameplayMusic: {fileID: 0}
+  gameManager: {fileID: 433311730}
 --- !u!4 &1413659223
 Transform:
   m_ObjectHideFlags: 0
@@ -1435,7 +1439,7 @@ PrefabInstance:
     - target: {fileID: 3427310009367964747, guid: 3adb184093596414fb4f3aac4d7b4d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.1
+      value: 15.3
       objectReference: {fileID: 0}
     - target: {fileID: 3427310009367964747, guid: 3adb184093596414fb4f3aac4d7b4d6a,
         type: 3}
