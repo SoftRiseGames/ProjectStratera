@@ -12,11 +12,10 @@ public class ButtonManager : MonoBehaviour
     private int levelvalue = 1;
     public GameObject gameplayMusic;
     public GameManager gameManager;
-  
+    
     private void Start()
     {
         levelvalue = PlayerPrefs.GetInt("levelvolume");
-       
     }
     
     public void NextLevel()
@@ -29,12 +28,8 @@ public class ButtonManager : MonoBehaviour
         PlayerPrefs.SetInt("soundcheckvalue", gameManager.soundcheckvalue);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
-       
     }
-    private void Update()
-    {
-        
-    }
+    
     public void welcome()
     {
         StartCoroutine(mainmenumanager.welcome());
@@ -73,5 +68,21 @@ public class ButtonManager : MonoBehaviour
             PlayerPrefs.SetInt("levelvolume", levelvalue);
         }
         Debug.Log(PlayerPrefs.GetInt("levelvolume"));
+    }
+    public void mainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Resume()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        Time.timeScale = 1;
+    }
+    public void StopMenu()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        Time.timeScale = 0;
     }
 }

@@ -6,19 +6,28 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public Button[] buttons;
+    public int levelcount;
+    public int buttoncheck;
     void Start()
     {
+        PlayerPrefs.GetInt("go");
         PlayerPrefs.GetInt("levelbuttons");
+        PlayerPrefs.GetInt("buttoncheck");
     }
 
     // Update is called once per frame
     void Update()
     {
-        for(int i =0; i < buttons.Length && i<PlayerPrefs.GetInt("go");)
+        if (PlayerPrefs.GetInt("levelbuttons") < PlayerPrefs.GetInt("go"))
         {
-            buttons[i].gameObject.SetActive(true);
-            i++;
-            PlayerPrefs.SetInt("levelbuttons", i);
+            buttoncheck = PlayerPrefs.GetInt("go");
+            PlayerPrefs.SetInt("buttoncheck", buttoncheck);
+        }
+        for(; levelcount < buttons.Length && levelcount<PlayerPrefs.GetInt("buttoncheck");)
+        {
+            buttons[levelcount].gameObject.SetActive(true);
+            levelcount++;
+            PlayerPrefs.SetInt("levelbuttons", levelcount);
         }
     }
 }

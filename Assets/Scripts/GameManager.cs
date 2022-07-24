@@ -27,17 +27,14 @@ public class GameManager : MonoBehaviour
         DeathControl = health.Length;
         _isGun = true;
         GameObject.Find("TimeLine");
-        restart = GameObject.Find("Restart").GetComponent<Canvas>();
-        
         TimeLine.gameObject.SetActive(false);
         restart.gameObject.SetActive(false);
         windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
         soundcheckvalue = 1;
-        PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
+        //PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
     }
     
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun ==true)
@@ -80,7 +77,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             PlayerPrefs.SetInt("go", SceneManager.GetActiveScene().buildIndex + 1);
             SceneManager.LoadScene(PlayerPrefs.GetInt("go"));
-           
         }
 
         if (isCollide == true)
@@ -93,9 +89,6 @@ public class GameManager : MonoBehaviour
             soundcheckvalue = 0;
             PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
         }
-        
-
-        
     }
     
 }
