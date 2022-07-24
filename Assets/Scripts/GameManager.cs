@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] health;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
         DeathControl = health.Length;
         _isGun = true;
         GameObject.Find("TimeLine");
+        
+        
         TimeLine.gameObject.SetActive(false);
         restart.gameObject.SetActive(false);
         windowoff.gameObject.SetActive(false);
@@ -37,20 +40,24 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun ==true)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            health[arraycontrol-1].gameObject.SetActive(false);
-            arraycontrol = arraycontrol - 1;
+            if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun == true)
+            {
+                health[arraycontrol - 1].gameObject.SetActive(false);
+                arraycontrol = arraycontrol - 1;
+            }
+            else if (Input.GetMouseButtonDown(0) && arraycontrol == 0 && _isGun == true)
+            {
+                health[0].gameObject.SetActive(false);
+            }
+
+            if (Input.GetMouseButtonDown(0) && _isGun == true)
+            {
+                DeathControl = DeathControl - 1;
+            }
         }
-        else if(Input.GetMouseButtonDown(0) && arraycontrol == 0 && _isGun == true)
-        {
-            health[0].gameObject.SetActive(false);
-        }
-        
-        if (Input.GetMouseButtonDown(0) && _isGun == true)
-        {
-            DeathControl = DeathControl - 1;
-        }
+
         StartCoroutine(timer());
        
     }

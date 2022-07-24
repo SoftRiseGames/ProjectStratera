@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
@@ -17,15 +17,19 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && gameManager.DeathControl>0 && gameManager._isGun ==true)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            Instantiate(bullet, rb.transform.position, rb.transform.rotation);
-            _animControl.enabled = false;
-        }
+            if (Input.GetMouseButtonDown(0) && gameManager.DeathControl > 0 && gameManager._isGun == true)
+            {
+                Instantiate(bullet, rb.transform.position, rb.transform.rotation);
+                _animControl.enabled = false;
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            _animControl.enabled = true;
+            if (Input.GetMouseButtonUp(0))
+            {
+                _animControl.enabled = true;
+            }
         }
+       
     }
 }
