@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         PlayerPrefs.GetInt("go");
-        PlayerPrefs.GetInt("levelbuttons");
         PlayerPrefs.GetInt("buttoncheck");
     }
 
@@ -27,7 +26,6 @@ public class LevelManager : MonoBehaviour
         {
             buttons[levelcount].gameObject.SetActive(true);
             levelcount++;
-            PlayerPrefs.SetInt("levelbuttons", levelcount);
         }
     }
 }

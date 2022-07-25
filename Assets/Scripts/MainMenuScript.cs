@@ -8,13 +8,10 @@ public class MainMenuScript : MonoBehaviour
     public SaveGame savebool;
     public GameObject music;
     public GameObject gameplayMusic;
-    private int levelbuttoncontrol;
+    
     private void Start()
     {
         TimeLineWelcome.gameObject.SetActive(false);
-        Debug.Log(PlayerPrefs.GetInt("levelvolume"));
-        levelbuttoncontrol = PlayerPrefs.GetInt("levelbuttons");
-
     }
     private void Update()
     {
