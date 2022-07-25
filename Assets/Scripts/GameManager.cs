@@ -21,26 +21,24 @@ public class GameManager : MonoBehaviour
     public bool isCollide;
     public int musicControl;
     public int soundcheckvalue = 1;
-
+    public bool isfire;
     void Start()
     {
         arraycontrol = health.Length;
         DeathControl = health.Length;
         _isGun = true;
-        GameObject.Find("TimeLine");
-        
-        
         TimeLine.gameObject.SetActive(false);
         restart.gameObject.SetActive(false);
         windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
         soundcheckvalue = 1;
-        //PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
+        isfire = false;
     }
     
     void Update()
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
+        StartCoroutine(wait());
+        if (!EventSystem.current.IsPointerOverGameObject() &&isfire ==true)
         {
             if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun == true)
             {
@@ -97,5 +95,9 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
         }
     }
-    
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.9f);
+        isfire = true;
+    }
 }
