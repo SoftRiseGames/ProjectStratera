@@ -8,10 +8,18 @@ public class MainMenuScript : MonoBehaviour
     public SaveGame savebool;
     public GameObject music;
     public GameObject gameplayMusic;
+<<<<<<< HEAD
     
     private void Start()
     {
         TimeLineWelcome.gameObject.SetActive(false);
+=======
+    private void Start()
+    {
+        TimeLineWelcome.gameObject.SetActive(false);
+        Debug.Log(PlayerPrefs.GetInt("levelvolume"));
+
+>>>>>>> parent of 50d424e (Particles)
     }
     private void Update()
     {

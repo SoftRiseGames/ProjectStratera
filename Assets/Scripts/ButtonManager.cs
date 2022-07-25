@@ -27,6 +27,7 @@ public class ButtonManager : MonoBehaviour
         gameManager.soundcheckvalue = 1;
         PlayerPrefs.SetInt("soundcheckvalue", gameManager.soundcheckvalue);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
     
     public void welcome()

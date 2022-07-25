@@ -1267,7 +1267,6 @@ MonoBehaviour:
   isCollide: 0
   musicControl: 0
   soundcheckvalue: 1
-  isfire: 0
 --- !u!1 &2140279735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3427310009334226306, guid: 3adb184093596414fb4f3aac4d7b4d6a,

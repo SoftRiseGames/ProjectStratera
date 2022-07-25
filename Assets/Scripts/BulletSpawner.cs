@@ -8,19 +8,16 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator _animControl;
     public GameManager gameManager;
-    public bool isfire;
     void Start()
     {
         _animControl = GameObject.Find("Gun").GetComponent<Animator>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        isfire = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(wait());
-        if (!EventSystem.current.IsPointerOverGameObject() && isfire ==true)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
             if (Input.GetMouseButtonDown(0) && gameManager.DeathControl > 0 && gameManager._isGun == true)
             {
@@ -34,10 +31,5 @@ public class BulletSpawner : MonoBehaviour
             }
         }
        
-    }
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(0.9f);
-        isfire = true;
     }
 }
