@@ -9,11 +9,14 @@ public class MainMenuScript : MonoBehaviour
     public GameObject music;
     public GameObject gameplayMusic;
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     private void Start()
     {
         TimeLineWelcome.gameObject.SetActive(false);
 =======
+=======
+>>>>>>> parent of 50d424e (Particles)
     private void Start()
     {
         TimeLineWelcome.gameObject.SetActive(false);
