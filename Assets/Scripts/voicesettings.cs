@@ -13,6 +13,7 @@ public class voicesettings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(PlayerPrefs.GetInt("levelvolume") == 1)
         {
             this.gameObject.SetActive(true);
@@ -22,6 +23,5 @@ public class voicesettings : MonoBehaviour
             this.gameObject.SetActive(false);
             
         }
-        
     }
 }

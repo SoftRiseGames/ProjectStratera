@@ -273,8 +273,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &89938227
@@ -699,8 +697,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &134791713
@@ -853,8 +849,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &214004230
@@ -1306,8 +1300,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &411339311
@@ -1460,8 +1452,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &448043270
@@ -1824,8 +1814,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &559123978
@@ -3354,8 +3342,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &954303647
@@ -3916,8 +3902,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &1070766325
@@ -4206,8 +4190,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &1147348949
@@ -4503,8 +4485,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &1384928495
@@ -4536,23 +4516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb533dd01ec4c44ab71b0e8a223d205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes:
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
   buttons:
   - {fileID: 2010891893}
   - {fileID: 366179794}
@@ -4570,6 +4533,8 @@ MonoBehaviour:
   - {fileID: 1028867142}
   - {fileID: 8932314}
   - {fileID: 945818344}
+  levelcount: 0
+  buttoncheck: 0
 --- !u!4 &1384928497
 Transform:
   m_ObjectHideFlags: 0
@@ -5122,8 +5087,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &1559106994
@@ -5158,9 +5121,7 @@ MonoBehaviour:
   mainmenumanager: {fileID: 1675029238}
   saveManager: {fileID: 2053567423}
   levelsAll: {fileID: 895110259}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
-  gameplayMusic: {fileID: 0}
+  gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!4 &1559106996
 Transform:
@@ -5904,8 +5865,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &1887071496
@@ -6142,8 +6101,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &1915963727
@@ -6296,8 +6253,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &1932704090
@@ -6824,8 +6779,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &2013302660
@@ -6978,8 +6931,6 @@ MonoBehaviour:
   mainmenumanager: {fileID: 0}
   saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
-  levelmanager: {fileID: 0}
-  music: {fileID: 0}
   gameplayMusic: {fileID: 319438075}
   gameManager: {fileID: 0}
 --- !u!1 &2047886230
