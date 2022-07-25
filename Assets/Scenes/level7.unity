@@ -1067,7 +1067,7 @@ MonoBehaviour:
   _EnemyCount: 2
   _isGun: 0
   TimeLine: {fileID: 656125284}
-  restart: {fileID: 854795561}
+  restart: {fileID: 733169244}
   windowoff: {fileID: 733169241}
   background: {fileID: 0}
   isCollide: 0
