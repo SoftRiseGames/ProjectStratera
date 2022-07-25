@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public bool isCollide;
     public int musicControl;
     public int soundcheckvalue = 1;
+    bool isfire;
 
     void Start()
     {
@@ -35,12 +36,14 @@ public class GameManager : MonoBehaviour
         windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
         soundcheckvalue = 1;
+        isfire = false;
         //PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
     }
     
     void Update()
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
+        StartCoroutine(wait());
+        if (!EventSystem.current.IsPointerOverGameObject() && isfire == true)
         {
             if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun == true)
             {
@@ -97,5 +100,11 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
         }
     }
-    
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.9f);
+        isfire = true;
+
+    }
+
 }

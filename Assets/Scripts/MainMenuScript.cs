@@ -44,6 +44,7 @@ public class MainMenuScript : MonoBehaviour
             savebool.value = 1;
             PlayerPrefs.SetInt("isstartgame", savebool.value);
             Debug.Log(PlayerPrefs.GetInt("isstartgame"));
+            
             if (PlayerPrefs.GetInt("levelvolume") == 1)
             {
                 gameplayMusic.gameObject.SetActive(true);
@@ -53,7 +54,6 @@ public class MainMenuScript : MonoBehaviour
             {
                 gameplayMusic.gameObject.SetActive(false);
             }
-
         }
 
         if (PlayerPrefs.GetInt("isstartgame") == 1)
