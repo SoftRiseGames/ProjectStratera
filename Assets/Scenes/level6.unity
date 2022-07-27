@@ -1027,7 +1027,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenumanager: {fileID: 0}
-  saveManager: {fileID: 0}
   levelsAll: {fileID: 0}
   gameplayMusic: {fileID: 0}
   gameManager: {fileID: 1354531618}

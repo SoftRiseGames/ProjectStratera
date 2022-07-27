@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public Button[] buttons;
     public int levelcount;
     public int buttoncheck;
+    public int go;
     void Start()
     {
         PlayerPrefs.GetInt("go");
@@ -17,18 +18,21 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        if (PlayerPrefs.GetInt("levelbuttons") <= PlayerPrefs.GetInt("go"))
+        levelcontrol();
+    }
+    void levelcontrol()
+    {
+        if (PlayerPrefs.GetInt("buttoncheck") <= PlayerPrefs.GetInt("go"))
         {
             buttoncheck = PlayerPrefs.GetInt("go");
             PlayerPrefs.SetInt("buttoncheck", buttoncheck);
         }
-      
-        for(; levelcount < buttons.Length && levelcount<PlayerPrefs.GetInt("buttoncheck");)
+        
+
+        for (; levelcount < buttons.Length && levelcount < PlayerPrefs.GetInt("buttoncheck");)
         {
             buttons[levelcount].gameObject.SetActive(true);
             levelcount++;
-          
         }
     }
 }

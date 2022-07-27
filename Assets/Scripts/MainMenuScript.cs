@@ -5,24 +5,19 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject TimeLineWelcome;
-    public SaveGame savebool;
     public GameObject music;
     public GameObject gameplayMusic;
-
-
+    public int levelcontroller;
     private void Start()
     {
+      Time.timeScale = 1;
       TimeLineWelcome.gameObject.SetActive(false);
       Debug.Log(PlayerPrefs.GetInt("levelvolume"));
+      
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            savebool.value = 0;
-            PlayerPrefs.SetInt("isstartgame", savebool.value);
-            Debug.Log(PlayerPrefs.GetInt("isstartgame"));
-        }
+       
 
         if (PlayerPrefs.GetInt("levelvolume") == 1)
         {
@@ -37,39 +32,26 @@ public class MainMenuScript : MonoBehaviour
     {
         TimeLineWelcome.gameObject.SetActive(true);
 
-        if (PlayerPrefs.GetInt("isstartgame") == 0)
+        if (PlayerPrefs.GetInt("go") == 0)
         {
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(1);
-            savebool.value = 1;
-            PlayerPrefs.SetInt("isstartgame", savebool.value);
-            Debug.Log(PlayerPrefs.GetInt("isstartgame"));
-            
-            if (PlayerPrefs.GetInt("levelvolume") == 1)
-            {
-                gameplayMusic.gameObject.SetActive(true);
-                DontDestroyOnLoad(gameplayMusic);
-            }
-            else if (PlayerPrefs.GetInt("levelvolume") == 0)
-            {
-                gameplayMusic.gameObject.SetActive(false);
-            }
         }
-
-        if (PlayerPrefs.GetInt("isstartgame") == 1)
+        else if(PlayerPrefs.GetInt("go") > 0)
         {
+            Debug.Log("aldý");
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(PlayerPrefs.GetInt("go"));
-
-            if (PlayerPrefs.GetInt("levelvolume") == 1)
-            {
-                gameplayMusic.gameObject.SetActive(true);
-                DontDestroyOnLoad(gameplayMusic);
-            }
-            else if (PlayerPrefs.GetInt("levelvolume") == 0)
-            {
-                gameplayMusic.gameObject.SetActive(false);
-            }
+        }
+        
+        if (PlayerPrefs.GetInt("levelvolume") == 1)
+        {
+            gameplayMusic.gameObject.SetActive(true);
+            DontDestroyOnLoad(gameplayMusic);
+        }
+        else if (PlayerPrefs.GetInt("levelvolume") == 0)
+        {
+            gameplayMusic.gameObject.SetActive(false);
         }
 
     }

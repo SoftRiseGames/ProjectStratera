@@ -22,47 +22,26 @@ public class GameManager : MonoBehaviour
     public int musicControl;
     public int soundcheckvalue = 1;
     bool isfire;
-
     void Start()
     {
         arraycontrol = health.Length;
         DeathControl = health.Length;
         _isGun = true;
         GameObject.Find("TimeLine");
-        
-        
         TimeLine.gameObject.SetActive(false);
         restart.gameObject.SetActive(false);
         windowoff.gameObject.SetActive(false);
         Time.timeScale = 1;
         soundcheckvalue = 1;
+        PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
         isfire = false;
-        //PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
     }
     
     void Update()
     {
+        Manage();
         StartCoroutine(wait());
-        if (!EventSystem.current.IsPointerOverGameObject() && isfire == true)
-        {
-            if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun == true)
-            {
-                health[arraycontrol - 1].gameObject.SetActive(false);
-                arraycontrol = arraycontrol - 1;
-            }
-            else if (Input.GetMouseButtonDown(0) && arraycontrol == 0 && _isGun == true)
-            {
-                health[0].gameObject.SetActive(false);
-            }
-
-            if (Input.GetMouseButtonDown(0) && _isGun == true)
-            {
-                DeathControl = DeathControl - 1;
-            }
-        }
-
         StartCoroutine(timer());
-       
     }
     public IEnumerator timer()
     {
@@ -88,7 +67,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("go", SceneManager.GetActiveScene().buildIndex + 1);
             SceneManager.LoadScene(PlayerPrefs.GetInt("go"));
         }
-
+        
         if (isCollide == true)
         {
             
@@ -105,6 +84,27 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.9f);
         isfire = true;
 
+    }
+
+    void Manage()
+    {
+        if (!EventSystem.current.IsPointerOverGameObject() && isfire == true)
+        {
+            if (Input.GetMouseButtonDown(0) && arraycontrol > 0 && _isGun == true)
+            {
+                health[arraycontrol - 1].gameObject.SetActive(false);
+                arraycontrol = arraycontrol - 1;
+            }
+            else if (Input.GetMouseButtonDown(0) && arraycontrol == 0 && _isGun == true)
+            {
+                health[0].gameObject.SetActive(false);
+            }
+
+            if (Input.GetMouseButtonDown(0) && _isGun == true)
+            {
+                DeathControl = DeathControl - 1;
+            }
+        }
     }
 
 }

@@ -20,10 +20,20 @@ public class BulletSpawner : MonoBehaviour
     void Update()
     {
         StartCoroutine(wait());
-        
+        spawncontrol();
+    }
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.9f);
+        isfire = true;
+
+    }
+
+    void spawncontrol()
+    {
         if (!EventSystem.current.IsPointerOverGameObject() && isfire == true)
         {
-            if (Input.GetMouseButtonDown(0) && gameManager.DeathControl > 0 && gameManager._isGun == true)
+            if (Input.GetMouseButtonDown(0) && gameManager.DeathControl >= 0 && gameManager._isGun == true)
             {
                 Instantiate(bullet, rb.transform.position, rb.transform.rotation);
                 _animControl.enabled = false;
@@ -34,12 +44,5 @@ public class BulletSpawner : MonoBehaviour
                 _animControl.enabled = true;
             }
         }
-       
-    }
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(0.9f);
-        isfire = true;
-
     }
 }
