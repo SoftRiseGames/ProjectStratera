@@ -17,16 +17,7 @@ public class MainMenuScript : MonoBehaviour
     }
     private void Update()
     {
-       
-
-        if (PlayerPrefs.GetInt("levelvolume") == 1)
-        {
-            music.gameObject.SetActive(true);
-        }
-        else if (PlayerPrefs.GetInt("levelvolume") == 0)
-        {
-            music.gameObject.SetActive(false);
-        }
+        volumecontrol();
     }
     public IEnumerator welcome()
     {
@@ -54,5 +45,16 @@ public class MainMenuScript : MonoBehaviour
             gameplayMusic.gameObject.SetActive(false);
         }
 
+    }
+    void volumecontrol()
+    {
+        if (PlayerPrefs.GetInt("levelvolume") == 1)
+        {
+            music.gameObject.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("levelvolume") == 0)
+        {
+            music.gameObject.SetActive(false);
+        }
     }
 }
