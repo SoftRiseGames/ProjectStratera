@@ -234,7 +234,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &215550627
 RectTransform:
@@ -438,7 +438,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &516531587
 RectTransform:
@@ -1286,6 +1286,7 @@ MonoBehaviour:
   - {fileID: 898590537}
   - {fileID: 1656986367}
   enemy: {fileID: 4699744174706504720, guid: 745cde849527efc4babab3264528c0a5, type: 3}
+  StopMenu: {fileID: 0}
   arraycontrol: 0
   DeathControl: 0
   _EnemyCount: 1
@@ -1295,8 +1296,10 @@ MonoBehaviour:
   windowoff: {fileID: 405904150}
   background: {fileID: 995524977}
   isCollide: 0
+  menustopbool: 0
   musicControl: 0
   soundcheckvalue: 1
+  buttonManager: {fileID: 1399784712}
 --- !u!1 &2140279735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3427310009334226306, guid: 3adb184093596414fb4f3aac4d7b4d6a,

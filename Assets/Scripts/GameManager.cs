@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] health;
     public GameObject enemy;
-    
+    public GameObject StopMenu;
     public int arraycontrol;
     public int DeathControl;
     public int _EnemyCount;
@@ -18,9 +18,11 @@ public class GameManager : MonoBehaviour
     public Canvas restart;
     public GameObject windowoff;
     public GameObject background;
-    public bool isCollide;
+    public bool isCollide,stopbool;
     public int musicControl;
     public int soundcheckvalue = 1;
+    public GameObject stopScreen;
+    
     bool isfire;
     void Start()
     {
@@ -35,11 +37,14 @@ public class GameManager : MonoBehaviour
         soundcheckvalue = 1;
         PlayerPrefs.SetInt("soundcheckvalue", soundcheckvalue);
         isfire = false;
+        stopScreen = GameObject.Find("StopMenu");
+        
     }
     
     void Update()
     {
         Manage();
+        stopControl();
         StartCoroutine(wait());
         StartCoroutine(timer());
     }
@@ -106,5 +111,26 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    void stopControl()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(stopbool == false)
+            {
+                stopScreen.transform.GetChild(0).gameObject.SetActive(true);
+                stopScreen.transform.GetChild(1).gameObject.SetActive(false);
+                stopScreen.transform.GetChild(2).gameObject.SetActive(false);
+                Time.timeScale = 0;
+                stopbool = true;
+            }
+            else if(stopbool == true)
+            {
+                stopScreen.transform.GetChild(0).gameObject.SetActive(false);
+                stopScreen.transform.GetChild(1).gameObject.SetActive(true);
+                stopScreen.transform.GetChild(2).gameObject.SetActive(true);
+                Time.timeScale = 1;
+                stopbool = false;
+            }
+        }
+    }
 }

@@ -59,4 +59,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/endingscene.unity
     guid: 42acbd53a7207e34a85159f4a10b1de7
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 950164246e9a88a4e81e7c12d2dfcb31,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 4a3b4248866445f4087db534e41ba150, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 8dd52807eda6dad41ab27ceec5c01a6c, type: 2}

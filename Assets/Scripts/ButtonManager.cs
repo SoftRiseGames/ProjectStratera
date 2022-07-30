@@ -14,9 +14,13 @@ public class ButtonManager : MonoBehaviour
     
     private void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
         levelvalue = PlayerPrefs.GetInt("levelvolume");
     }
-    
+
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -78,6 +82,7 @@ public class ButtonManager : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         gameObject.transform.GetChild(1).gameObject.SetActive(true);
         gameObject.transform.GetChild(2).gameObject.SetActive(true);
+        gameManager.stopbool = false;
         Time.timeScale = 1;
     }
     public void StopMenu()
@@ -85,6 +90,11 @@ public class ButtonManager : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
         gameObject.transform.GetChild(2).gameObject.SetActive(false);
+        gameManager.stopbool = true;
         Time.timeScale = 0;
+    }
+    public void quit()
+    {
+        Application.Quit();
     }
 }
